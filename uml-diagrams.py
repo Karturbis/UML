@@ -1,12 +1,12 @@
 # This is a script to make ASCII-art UML-diagrams
 # Author: Katurbis
-version = 1
+version = 1.1
 
 
 # returns the classname as a String
 def get_classname():
 
-    classname = input("please type in the classname: ")
+    classname = input("Please type in the classname: ")
     return classname
 
 # returns the variables as a list of Strings
@@ -57,7 +57,7 @@ def get_len_uml(classname, variables, methods):
     len_uml = 0
 
     if len(classname) > len_uml:
-        len_uml = len(classname)
+        len_uml = len(classname) +1
 
     for i in variables:
         if len(i) > len_uml:
@@ -83,7 +83,7 @@ def print_UML(classname, variables, methods):
     print(x * "–")
 
     # prints the classname into the topmost section of the diagram
-    print("|     " + classname + cb + "  |")
+    print("|   " + classname + cb + " |")
 
     # prints the dividing line between the topmost and the middle part of the diagram
     print(x * "–")
@@ -110,7 +110,7 @@ def print_UML(classname, variables, methods):
 if __name__ == "__main__":
 
     #describes the sript to the user
-    print("This is a script, to make ASCII-art UML-diagrams!\nVersion: " + version + "\nwritten by Katurbis")
+    print("This is a script, to make ASCII-art UML-diagrams!\nVersion: " + str(version) + "\nwritten by Katurbis\n")
 
     # first gets all values (with the get methods) and then creates a ASCII art UML diagram from it (with the print_UML method)
     print_UML(get_classname(), get_variables(), get_methods())
