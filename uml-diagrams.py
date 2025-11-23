@@ -1,5 +1,5 @@
-# This is a script to make ASCII-art UML-diagrams
-# Author: Katurbis
+""" This is a script to make simple ASCII-art UML-diagrams
+@author: Karturbis """
 version = 1.1
 
 
@@ -24,7 +24,7 @@ def get_variables():
 
         if x == "":
             break
-        
+
         else:
             variables.append(x)
 
@@ -45,7 +45,7 @@ def get_methods():
 
         if x == "":
             break
-        
+
         else:
             methods.append(x)
 
@@ -62,7 +62,7 @@ def get_len_uml(classname, variables, methods):
     for i in variables:
         if len(i) > len_uml:
             len_uml = len(i)
-    
+
     for i in methods:
         if len(i) > len_uml:
             len_uml = len(i)
@@ -78,7 +78,7 @@ def print_UML(classname, variables, methods):
 
     # sets the string cb to as many spaces, as needed, to have the pipe at the end of the diagram all in one row
     cb = (len_uml - len(classname)) * " "
-    
+
     # prints the top line of the diagram
     print(x * "–")
 
@@ -87,7 +87,7 @@ def print_UML(classname, variables, methods):
 
     # prints the dividing line between the topmost and the middle part of the diagram
     print(x * "–")
-    
+
     # prints the variables into the middle section of the diagram
     for i in variables:
         b = (len_uml - len(i)) * " "
@@ -104,14 +104,12 @@ def print_UML(classname, variables, methods):
     # prints the bottom line of the diagram
     print(x * "–")
 
-    
 
 # the main method
 if __name__ == "__main__":
 
     #describes the sript to the user
-    print("This is a script, to make ASCII-art UML-diagrams!\nVersion: " + str(version) + "\nwritten by Katurbis\n")
+    print("This is a script, to make ASCII-art UML-diagrams!\nVersion: " + str(version) + "\nwritten by Karturbis\n")
 
     # first gets all values (with the get methods) and then creates a ASCII art UML diagram from it (with the print_UML method)
     print_UML(get_classname(), get_variables(), get_methods())
-
